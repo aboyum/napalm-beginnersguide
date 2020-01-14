@@ -12,3 +12,10 @@ print json.dumps(sw1_output, indent=4))
 #Get more info of interfaces
 sw1_output = sw1.get_interfaces()
 print json.dumps(sw1_output, indent=4))
+
+#Get ARP address table
+sw1_output = sw1.get_arp_table()
+print json.dumps(sw1_output, indent=4))
+
+# List of all the things you can retrive by get
+# https://napalm.readthedocs.io/en/latest/support/index.html
