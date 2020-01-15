@@ -7,3 +7,21 @@ pip3 install cryptography
 pip3 install netmiko
 pip3 install napalm
 sudo pip3 install json
+
+# Preconfig on switches to login via ssh:
+
+hostname sw1
+enable secret 5 $1$/iGv$1OJnU5a//4z5AZIHDJgbt1
+ip domain name test.test
+username user privilege 15 secret 5 $1$.MAk$e7lhcAloLeTd7RnYfPvnl/
+
+interface GigabitEthernet0/0
+ ip address dhcp
+ no shut
+
+line vty 0 4
+ login local
+ transport input ssh
+
+ip scp server enable
+crypto key generate rsa modulus 1024
