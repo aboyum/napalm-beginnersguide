@@ -2,7 +2,7 @@ from napalm import get_network_driver
 import json
 
 driver_ios = get_network_driver('ios')
-sw1 = driver_ios('10.0.0.1', 'user', 'password')
+sw1 = driver_ios('10.0.3.119', 'user', 'password')
 sw1.open()
 
 print ('Accessing')
